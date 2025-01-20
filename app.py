@@ -7,4 +7,4 @@ def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=False, port=80)
+    app.run(debug=True) #Si può considerare la medesima string anche per deploy!
