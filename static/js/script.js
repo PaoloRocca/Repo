@@ -42,40 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener per il cambio del colore
     colorInput.addEventListener('input', function () {
         const color = this.value;
-        
         // Modifica la variabile CSS del colore di contrasto
         document.documentElement.style.setProperty('--contrast-color', color);
         document.documentElement.style.setProperty('--hover-color', getHoverColor(color)); // Imposta il colore hover
-    });
-
-    // Aggiungi animazioni di scorrimento per le sezioni
-    window.addEventListener('scroll', function () {
-        let scrollPosition = window.scrollY;
-
-        const intro = document.querySelector('.intro');
-        const projects = document.querySelector('.projects');
-        const contact = document.querySelector('.contact');
-
-        // Animazione della sezione introduttiva
-        if (scrollPosition > intro.offsetHeight / 2) {
-            intro.style.opacity = 0;
-        } else {
-            intro.style.opacity = 1;
-        }
-
-        // Animazione della sezione progetti
-        if (scrollPosition > projects.offsetTop - window.innerHeight + 100) {
-            projects.style.opacity = 1;
-        } else {
-            projects.style.opacity = 0;
-        }
-
-        // Animazione della sezione contatti
-        if (scrollPosition > contact.offsetTop - window.innerHeight + 100) {
-            contact.style.opacity = 1;
-        } else {
-            contact.style.opacity = 0;
-        }
     });
 
     // Funzione per scrollare in cima alla pagina
@@ -83,6 +52,19 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToTopButtons.forEach(button => {
         button.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    // Funzione per applicare uno scroll personalizzato
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'  // Effetto di transizione
+            });
         });
     });
 });

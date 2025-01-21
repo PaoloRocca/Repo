@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V3Y288GS2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3V3Y288GS2');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +24,7 @@
             <img src="static/images/logo.png" alt="Logo" />
         </div>
         <ul class="navbar__menu">
-            <li><a href="#about">Chi Sono</a></li>
+            <li><a href="#intro">Chi Sono</a></li>
             <li><a href="#projects">Progetti</a></li>
             <li><a href="#services">Servizi</a></li>
             <li><a href="#contact">Contatti</a></li>
@@ -28,7 +36,7 @@
     </nav>
 
     <!-- Sezione Introduzione -->
-    <section id="about" class="intro">
+    <section id="intro" class="intro">
         <div class="intro__content">
             <h1>Paolo Rocca</h1>
             <p>Ingegnere meccatronico appassionato di tecnologia e innovazione.</p>
@@ -95,8 +103,48 @@
     <!-- Sezione Servizi -->
     <section id="services" class="services">
         <h2>Servizi</h2>
-        <p>Offriamo una vasta gamma di servizi nel campo della meccatronica e automazione.</p>
-        <!-- Aggiungere contenuti e descrizione -->
+        <div class="services__grid">
+            <div class="service">
+                <img src="static/images/service1.jpg" alt="Servizio 1">
+                <h3>Servizio 1</h3>
+                <p>Descrizione breve del servizio 1.</p>
+                <button class="info-btn" data-service="1">Richiedi informazioni</button>
+            </div>
+            <div class="service">
+                <img src="static/images/service2.jpg" alt="Servizio 2">
+                <h3>Servizio 2</h3>
+                <p>Descrizione breve del servizio 2.</p>
+                <button class="info-btn" data-service="2">Richiedi informazioni</button>
+            </div>
+            <div class="service">
+                <img src="static/images/service3.jpg" alt="Servizio 3">
+                <h3>Servizio 3</h3>
+                <p>Descrizione breve del servizio 3.</p>
+                <button class="info-btn" data-service="3">Richiedi informazioni</button>
+            </div>
+            <div class="service">
+                <img src="static/images/service4.jpg" alt="Servizio 4">
+                <h3>Servizio 4</h3>
+                <p>Descrizione breve del servizio 4.</p>
+                <button class="info-btn" data-service="4">Richiedi informazioni</button>
+            </div>
+            <div class="service">
+                <img src="static/images/service5.jpg" alt="Servizio 5">
+                <h3>Servizio 5</h3>
+                <p>Descrizione breve del servizio 5.</p>
+                <button class="info-btn" data-service="5">Richiedi informazioni</button>
+            </div>
+            <div class="service">
+                <img src="static/images/service6.jpg" alt="Servizio 6">
+                <h3>Servizio 6</h3>
+                <p>Descrizione breve del servizio 6.</p>
+                <button class="info-btn" data-service="6">Richiedi informazioni</button>
+            </div>
+        </div>
+        <!-- Freccia per tornare in cima -->
+        <div class="scroll-to-top" onclick="scrollToTop()">
+            ↑
+        </div>
     </section>
 
     <!-- Sezione Contatti -->
