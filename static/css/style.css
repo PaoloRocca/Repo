@@ -71,7 +71,7 @@ body {
     width: 100%;
     background-color: #1f1f1f; /* Colore scuro per la navbar */
     padding: 15px 0;
-    z-index: 100;
+    z-index: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,6 +83,13 @@ body {
     font-weight: bold;
     margin-left: 20px;
     color: var(--contrast-color);
+    display: flex; 
+    align-items: center; /* Centra l'immagine verticalmente */
+    flex: 0 0 3em;
+}
+
+.navbar__logo img {
+    width:100%
 }
 
 .navbar__menu {
@@ -110,7 +117,7 @@ body {
     margin-right: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-direction: column;
 }
 
 /* Sezione Introduzione */
@@ -200,7 +207,7 @@ body {
 /* Sezione Servizi */
 .services {
     padding: 50px 20px;
-    background-color: #1d1d1d;
+    background-color: #222222;
     text-align: center;
 }
 
@@ -267,7 +274,7 @@ body {
 /* Sezione Contatti */
 .contact {
     padding: 50px 20px;
-    background-color: #222222;
+    background-color: #1d1d1d;
     text-align: center;
 }
 

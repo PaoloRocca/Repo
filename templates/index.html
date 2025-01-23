@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V3Y288GS2"></script>
+
+    <!-- Codice per il banner dei cookie -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-3V3Y288GS2');
+        window.addEventListener("load", function() {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#000"
+                    },
+                    "button": {
+                        "background": "#f1d600"
+                    }
+                },
+                "content": {
+                    "message": "Questo sito utilizza i cookie per migliorare l'esperienza dell'utente. Proseguendo nella navigazione, accetti l'uso dei cookie.",
+                    "dismiss": "Accetto",
+                    "link": "Maggiori informazioni",
+                    "href": "/privacy-policy"  // Link alla tua privacy policy
+                },
+                onStatusChange: function(status) {
+                    if (status === 'allow') {
+                        // Carica Google Analytics solo se l'utente ha accettato i cookie
+                        loadGoogleAnalytics();
+                    }
+                }
+            });
+        });
+
+        function loadGoogleAnalytics() {
+            // Carica lo script di Google Analytics solo se l'utente ha acconsentito
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-3V3Y288GS2"; //ID di GA
+            script.async = true;
+            document.head.appendChild(script);
+
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-3V3Y288GS2');  //ID di GA
+            };
+        }
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +59,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar__logo">
-            <img src="static/images/logo.png" alt="Logo" />
+            <img src="static/images/logo.png"/>
         </div>
         <ul class="navbar__menu">
             <li><a href="#intro">Chi Sono</a></li>
@@ -52,43 +90,54 @@
         <h2>Progetti</h2>
         <div class="projects__grid">
             <div class="project">
-                <img src="static/images/3d_sensor.jpg" alt="Progetto 1">
+                <img src="static/images/p1.jpg" alt="Progetto 1">
                 <h3>Integrazione sensori di visione 3D</h3>
-                <p>Fornire la "vista" ad una macchina mobile è possibile utilizzando opportuni sensori.<br />
+                <p>
+                    Fornire la "vista" ad una macchina mobile è possibile utilizzando opportuni sensori.<br />
                     L'integrazione è stata realizzata in Codesys 2.3 e 3.5 su trattori sia agricoli che stradali oltre a camion da cantiere e
                     piattaforme.
                 </p>
                 <button class="info-btn" data-project="1">Richiedi informazioni</button>
             </div>
             <div class="project">
-                <img src="static/images/Wireless_Can.jpg" alt="Progetto 2">
+                <img src="static/images/p2.jpg" alt="Progetto 2">
                 <h3>Gestione CAN e CANopen in wireless</h3>
-                <p>Tramite opportuni gateway sono stati inseriti nodi CAN comunicanti tra loro via wi-fi o Bluetooth.<br />
+                <p>
+                    Tramite opportuni gateway sono stati inseriti nodi CAN comunicanti tra loro via wi-fi o Bluetooth.<br />
                     Seguita implementazione app Android per interfaccia di visualizzazione variabili e stati.<br />
                     Possibile implementazione di comandi CAN e CANopen per realizzare un "telecomando" a basso costo per macchina mobile.
                 </p>
                 <button class="info-btn" data-project="2">Richiedi informazioni</button>
             </div>
             <div class="project">
-                <img src="static/images/project3.jpg" alt="Progetto 3">
-                <h3>Progetto 3</h3>
-                <p>Descrizione breve del progetto.</p>
+                <img src="static/images/p3.jpg" alt="Progetto 3">
+                <h3>IO-Link e CANopen cooperanti via Ethernet</h3>
+                <p>
+                    Integrazione prodotti IO-Link in macchine mobili utilizzando rete Ethernet del plc come gateway.<br />
+                    Il master IO-Link raccoglie dati dai device IO-Link e li invia al plc via Ethernet, CANbus raccoglie i dati dai device
+                    CAN/CANopen e li invia al plc via bus: le due famiglie di dati possono essere gestite come fossero nativamente un unico
+                    stream.
+                </p>
                 <button class="info-btn" data-project="3">Richiedi informazioni</button>
             </div>
             <div class="project">
-                <img src="static/images/project4.jpg" alt="Progetto 4">
-                <h3>Progetto 4</h3>
-                <p>Descrizione breve del progetto.</p>
+                <img src="static/images/p4.jpg" alt="Progetto 4">
+                <h3>Implementazione Mobile IoT</h3>
+                <p>
+                    Monitoraggio e diagnostica remota di macchine mobili, con gestione flotta e ricette personalizzabili.<br />
+                    Possibile anche effettuare aggiornamento firmware da remoto su una macchina mobile (a patto di avere adeguata
+                    copertura di segnale).
+                </p>
                 <button class="info-btn" data-project="4">Richiedi informazioni</button>
             </div>
             <div class="project">
-                <img src="static/images/project5.jpg" alt="Progetto 5">
+                <img src="static/images/login.jpg" alt="Progetto 5">
                 <h3>Progetto 5</h3>
                 <p>Descrizione breve del progetto.</p>
                 <button class="info-btn" data-project="5">Richiedi informazioni</button>
             </div>
             <div class="project">
-                <img src="static/images/project6.jpg" alt="Progetto 6">
+                <img src="static/images/login.jpg" alt="Progetto 6">
                 <h3>Progetto 6</h3>
                 <p>Descrizione breve del progetto.</p>
                 <button class="info-btn" data-project="6">Richiedi informazioni</button>
@@ -105,38 +154,38 @@
         <h2>Servizi</h2>
         <div class="services__grid">
             <div class="service">
-                <img src="static/images/service1.jpg" alt="Servizio 1">
-                <h3>Servizio 1</h3>
+                <img src="static/images/login.jpg" alt="Servizio 1">
+                <h3>Technical Manager</h3>
                 <p>Descrizione breve del servizio 1.</p>
                 <button class="info-btn" data-service="1">Richiedi informazioni</button>
             </div>
             <div class="service">
-                <img src="static/images/service2.jpg" alt="Servizio 2">
-                <h3>Servizio 2</h3>
+                <img src="static/images/login.jpg" alt="Servizio 2">
+                <h3>Project Manager</h3>
                 <p>Descrizione breve del servizio 2.</p>
                 <button class="info-btn" data-service="2">Richiedi informazioni</button>
             </div>
             <div class="service">
-                <img src="static/images/service3.jpg" alt="Servizio 3">
-                <h3>Servizio 3</h3>
+                <img src="static/images/login.jpg" alt="Servizio 3">
+                <h3>Product Manager</h3>
                 <p>Descrizione breve del servizio 3.</p>
                 <button class="info-btn" data-service="3">Richiedi informazioni</button>
             </div>
             <div class="service">
-                <img src="static/images/service4.jpg" alt="Servizio 4">
-                <h3>Servizio 4</h3>
+                <img src="static/images/login.jpg" alt="Servizio 4">
+                <h3>Certificazioni e normative</h3>
                 <p>Descrizione breve del servizio 4.</p>
                 <button class="info-btn" data-service="4">Richiedi informazioni</button>
             </div>
             <div class="service">
-                <img src="static/images/service5.jpg" alt="Servizio 5">
-                <h3>Servizio 5</h3>
+                <img src="static/images/login.jpg" alt="Servizio 5">
+                <h3>Formazioni</h3>
                 <p>Descrizione breve del servizio 5.</p>
                 <button class="info-btn" data-service="5">Richiedi informazioni</button>
             </div>
             <div class="service">
-                <img src="static/images/service6.jpg" alt="Servizio 6">
-                <h3>Servizio 6</h3>
+                <img src="static/images/login.jpg" alt="Servizio 6">
+                <h3>Analisi/Programmazione/Porting</h3>
                 <p>Descrizione breve del servizio 6.</p>
                 <button class="info-btn" data-service="6">Richiedi informazioni</button>
             </div>
