@@ -31,7 +31,8 @@
 html {
     scrollbar-width: auto; /* Imposta la larghezza della scrollbar a "fine" */
     scrollbar-color: var(--contrast-color) #333; /* Imposta il colore del "thumb" e del "track" */
-    /*scroll-behavior: smooth; /* Aggiungi l'effetto smooth scroll */
+    scroll-behavior: smooth; /* Aggiungi l'effetto smooth scroll */
+    scroll-padding-top: 80px;  /* Imposta l'offset per la navbar */
 }
 
 /* Aggiungi effetto hover per Firefox */
@@ -61,7 +62,6 @@ body {
     background-color: #121212; /* Scuro per il fondo */
     color: #fff;
     overflow-x: hidden;
-    padding-top: 60px; /* Spazio per la navbar fissa */
 }
 
 /* Navbar */
@@ -120,6 +120,11 @@ body {
     flex-direction: column;
 }
 
+/* Impostazioni generali per ogni sezione */
+section {
+    padding: 50px 20px;
+}
+
 /* Sezione Introduzione */
 .intro {
     height: 100vh;
@@ -155,7 +160,6 @@ body {
 
 /* Sezione Progetti */
 .projects {
-    padding: 50px 20px;
     background-color: #1d1d1d;
     text-align: center;
 }
@@ -206,7 +210,6 @@ body {
 
 /* Sezione Servizi */
 .services {
-    padding: 50px 20px;
     background-color: #222222;
     text-align: center;
 }
@@ -273,7 +276,6 @@ body {
 
 /* Sezione Contatti */
 .contact {
-    padding: 50px 20px;
     background-color: #1d1d1d;
     text-align: center;
 }

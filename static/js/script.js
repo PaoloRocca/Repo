@@ -70,19 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Funzione per applicare uno scroll personalizzato
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetElement = document.querySelector(this.getAttribute('href'));
-            
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'  // Effetto di transizione
-            });
-        });
-    });
-
     // Gestione Google Analytics
     window.addEventListener("load", function() {
         window.cookieconsent.initialise({
