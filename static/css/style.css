@@ -32,7 +32,7 @@ html {
     scrollbar-width: auto; /* Imposta la larghezza della scrollbar a "fine" */
     scrollbar-color: var(--contrast-color) #333; /* Imposta il colore del "thumb" e del "track" */
     scroll-behavior: smooth; /* Aggiungi l'effetto smooth scroll */
-    scroll-padding-top: 80px;  /* Imposta l'offset per la navbar */
+    scroll-padding-top: 80px /* Imposta l'offset per la navbar */
 }
 
 /* Aggiungi effetto hover per Firefox */
@@ -113,6 +113,7 @@ body {
     color: var(--contrast-color);
 }
 
+/* Theme selector */
 .color-picker {
     margin-right: 20px;
     display: flex;
@@ -125,26 +126,7 @@ section {
     padding: 50px 20px;
 }
 
-/* Sezione Introduzione */
-.intro {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #222222;
-    text-align: center;
-}
-
-.intro__content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.intro__content p {
-    font-size: 1.2rem;
-    color: #bbb;
-}
-
+/* Scroll to top */
 .scroll-to-top {
     font-size: 2rem;
     color: #fff;
@@ -156,6 +138,24 @@ section {
 
 .scroll-to-top:hover {
     color: var(--contrast-color);
+}
+
+/* Sezione Introduzione */
+.intro {
+    background-color: #222222;
+    text-align: center;
+    padding-top: 160px;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: var(--contrast-color);
+}
+
+.intro__content p {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-top: 30px;
 }
 
 /* Sezione Progetti */
