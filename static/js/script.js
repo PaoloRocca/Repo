@@ -15,6 +15,21 @@ function getHoverColor(color) {
     return (retColor)
 }
 
+// Caricamento Google Analytics
+function loadGoogleAnalytics() {
+    var script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-3V3Y288GS2"; //ID di GA
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3V3Y288GS2');  //ID di GA
+    };
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const infoButtons = document.querySelectorAll('.info-btn');
     const messageTextArea = document.getElementById('message'); // La textarea dei contatti
@@ -65,6 +80,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 top: targetElement.offsetTop,
                 behavior: 'smooth'  // Effetto di transizione
             });
+        });
+    });
+
+    // Gestione Google Analytics
+    window.addEventListener("load", function() {
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#000"
+                },
+                "button": {
+                    "background": "#f1d600"
+                }
+            },
+            "content": {
+                "message": "Questo sito utilizza i cookie per migliorare l'esperienza dell'utente. Proseguendo nella navigazione, accetti l'uso dei cookie.",
+                "dismiss": "Accetto",
+                "link": "Maggiori informazioni",
+                "href": "/privacy-policy"  // Link alla tua privacy policy
+            },
+            onStatusChange: function(status) {
+                if (status === 'allow') {
+                    // Carica Google Analytics solo se l'utente ha accettato i cookie
+                    loadGoogleAnalytics();
+                }
+            }
         });
     });
 });

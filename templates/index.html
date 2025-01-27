@@ -1,57 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-
-    <!-- Codice per il banner dei cookie -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function() {
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#000"
-                    },
-                    "button": {
-                        "background": "#f1d600"
-                    }
-                },
-                "content": {
-                    "message": "Questo sito utilizza i cookie per migliorare l'esperienza dell'utente. Proseguendo nella navigazione, accetti l'uso dei cookie.",
-                    "dismiss": "Accetto",
-                    "link": "Maggiori informazioni",
-                    "href": "/privacy-policy"  // Link alla tua privacy policy
-                },
-                onStatusChange: function(status) {
-                    if (status === 'allow') {
-                        // Carica Google Analytics solo se l'utente ha accettato i cookie
-                        loadGoogleAnalytics();
-                    }
-                }
-            });
-        });
-
-        function loadGoogleAnalytics() {
-            // Carica lo script di Google Analytics solo se l'utente ha acconsentito
-            var script = document.createElement('script');
-            script.src = "https://www.googletagmanager.com/gtag/js?id=G-3V3Y288GS2"; //ID di GA
-            script.async = true;
-            document.head.appendChild(script);
-
-            script.onload = function() {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-3V3Y288GS2');  //ID di GA
-            };
-        }
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.css" />
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.0/build/cookieconsent.min.js"></script>
     <script src="static/js/script.js" defer></script>
     <title>Ing. Paolo Rocca - Personal website</title>
 </head>
