@@ -144,7 +144,7 @@ section {
 .intro {
     background-color: #222222;
     text-align: center;
-    padding-top: 160px;
+    padding-top: 130px;
 }
 
 .intro h2 {
@@ -152,10 +152,43 @@ section {
     color: var(--contrast-color);
 }
 
-.intro__content p {
-    font-size: 1.2rem;
-    color: #bbb;
+.intro__content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
     margin-top: 30px;
+    padding: 0 20px;
+}
+
+.intro__image {
+    display: flex;
+}
+
+.intro__image img {
+    width: 300px; /* Imposta una larghezza fissa o in percentuale (es. 40% per adattarsi alla larghezza del contenitore) */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+    background-position: center; /* Centra l'immagine all'interno del contenitore */
+    border-radius: 8px; /* Angoli leggermente arrotondati */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Ombra sfumata intorno all'immagine */
+    transition: all 0.3s ease; /* Animazione morbida per la transizione */
+}
+
+.intro__image:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Ombra più intensa quando si passa sopra */
+}
+
+.intro__text {
+    display: flex;
+    color: #ccc;
+    font-size: 1.2rem;
+    max-width: auto; /* Limita la larghezza del testo per evitare che diventi troppo largo */
+    margin-left: 20px; /* Aggiungi spazio tra l'immagine e il testo */
+    text-align: left;
+}
+
+.intro__text p {
+    display: flex;
+    line-height: 1.6; /* Aumenta la leggibilità del testo */
 }
 
 /* Sezione Progetti */
@@ -206,6 +239,7 @@ section {
     color: #ccc;
     font-size: 1rem;
     margin-top: 10px;
+    text-align: left;
 }
 
 /* Sezione Servizi */
@@ -256,6 +290,7 @@ section {
     color: #ccc;
     font-size: 1rem;
     margin-top: 10px;
+    text-align: left;
 }
 
 /* Button Style */
