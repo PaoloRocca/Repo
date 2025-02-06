@@ -300,7 +300,7 @@ section {
     text-align: left;
 }
 
-/* Button Style */
+/* Info Button */
 .info-btn {
     padding: 10px 20px;
     background-color: var(--contrast-color);
@@ -343,7 +343,7 @@ section {
 }
 
 .contact textarea {
-    resize: vertical, horizontal; /* Permette di ridimensionare la textarea verticalmente */
+    resize: vertical, horizontal; /* Permette di ridimensionare la textarea */
 }
 
 .contact button {
@@ -388,20 +388,4 @@ footer p {
     .intro__content p {
         font-size: 1rem;
     }
-}
-
-/* Info Button */
-.info-btn {
-    padding: 10px 20px;
-    background-color: var(--contrast-color);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-btn:hover {
-    background-color: var(--hover-color);
 }
