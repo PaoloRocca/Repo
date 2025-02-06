@@ -155,9 +155,9 @@ section {
 .intro__content {
     display: flex;
     align-items: center;
-    gap: 30px;
     margin-top: 30px;
     padding: 0 20px;
+    gap: 30px;  /* Spaziatura tra le sezioni */
 }
 
 .intro__image {
@@ -173,6 +173,10 @@ section {
     transition: all 0.3s ease; /* Animazione morbida per la transizione */
 }
 
+.intro__image figcaption {
+    font-size: 25px; /* Dimensione testo didascalia */
+}
+
 .intro__image:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Ombra più intensa quando si passa sopra */
 }
@@ -184,10 +188,12 @@ section {
     max-width: auto; /* Limita la larghezza del testo per evitare che diventi troppo largo */
     margin-left: 20px; /* Aggiungi spazio tra l'immagine e il testo */
     text-align: left;
+    flex-direction: column;
 }
 
 .intro__text p {
     display: flex;
+    margin-bottom: 30px;
     line-height: 1.6; /* Aumenta la leggibilità del testo */
 }
 

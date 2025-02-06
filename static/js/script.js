@@ -32,7 +32,7 @@ function loadGoogleAnalytics() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const infoButtons = document.querySelectorAll('.info-btn');
-    const messageTextArea = document.getElementById('message'); // La textarea dei contatti
+    const messageTextArea = document.getElementById('message'); // Textarea dei contatti
 
     // Gestione dei bottoni "Richiedi informazioni"
     infoButtons.forEach(button => {
@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const projectNumber = this.getAttribute('data-project');
             // Compila automaticamente la textarea con il nome del progetto
             messageTextArea.value = "Richiesta informazioni su Progetto " + projectNumber + ":\n";
-            
-            // Puoi anche scorrere la pagina fino alla sezione contatti se vuoi che l'utente arrivi lì subito
+            // Scorri la pagina fino alla sezione contatti
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         });
     });
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "message": "Questo sito utilizza i cookie per migliorare l'esperienza dell'utente. Proseguendo nella navigazione, accetti l'uso dei cookie.",
                 "dismiss": "Accetto",
                 "link": "Maggiori informazioni",
-                "href": "/privacy-policy"  // Link alla tua privacy policy
+                "href": "/privacy-policy"  // Link a privacy policy
             },
             onStatusChange: function(status) {
                 if (status === 'allow') {
