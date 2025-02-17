@@ -371,6 +371,60 @@ footer p {
     font-size: 1rem;
 }
 
+
+/* Intestazione */
+.policy-intro {
+    background-color: #121212; /* Fondo scuro */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.policy-intro__title {
+    font-size: 3rem;
+    color: var(--contrast-color); /* Colore contrastante */
+    margin-bottom: 20px; /* Distanza tra titolo e paragrafo */
+}
+
+.policy-intro__text {
+    color: #ccc;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto; /* Centra il testo */
+    line-height: 1.6;
+}
+
+/* Contenuto principale (sezione politica) */
+.policy-details {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.policy-details h2 {
+    font-size: 2.5rem;
+    color: var(--contrast-color);
+    margin-bottom: 15px; /* Spazio tra il titolo e il testo */
+}
+
+.policy-details p {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Distanza tra i paragrafi */
+}
+
+.policy-details ul {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-left: 20px; /* Aggiungi uno spazio a sinistra per le voci della lista */
+    list-style-type: disc; /* Usa punti elenco */
+}
+
+.policy-details li {
+    margin-bottom: 10px; /* Distanza tra le voci della lista */
+}
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     .projects__grid {
